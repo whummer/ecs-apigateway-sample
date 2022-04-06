@@ -28,7 +28,7 @@ app.put('/foodstore/foods/:foodId', (req, res, next) => {
 
     elData.foodId = foodId
     var params = {
-        Item: elData, 
+        Item: elData,
         TableName: DynamoDBTable
     }
 
@@ -41,10 +41,10 @@ app.put('/foodstore/foods/:foodId', (req, res, next) => {
 
 // GET Route
 app.get('/foodstore/foods/:foodId', (req, res, next) => {
-    
+
     var foodId = req.params.foodId
     var params = {
-        Key: { "foodId": foodId }, 
+        Key: { "foodId": foodId },
         TableName: DynamoDBTable
     }
 
@@ -55,7 +55,7 @@ app.get('/foodstore/foods/:foodId', (req, res, next) => {
 
 })
 
-// Handle generic error 
+// Handle generic error
 app.use((err, req, res, next) => {
     console.log(err)
     res.status( err.status || err.statusCode|| 500 ).json({ message: err.message })

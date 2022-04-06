@@ -496,7 +496,7 @@ Resources:
             Image: 'localstack/ecsapi-demo-petstore:latest'
             Essential: true
             PortMappings:
-              - ContainerPort: 8080
+              - ContainerPort: 8081
                 Protocol: tcp
             Environment:
               - Name: DynamoDBTable
